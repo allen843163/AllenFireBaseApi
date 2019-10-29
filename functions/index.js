@@ -46,7 +46,7 @@ exports.addMessage = functions.https.onRequest(async (req, res) => {
 
     var token = req.get('mToken9527');
 
-    if(token === null || !token.valueOf().match("9527")) {
+    if(token === undefined || token !== "9527") {
         res.status(403).send("Forbidden");
 
         return;
