@@ -74,7 +74,7 @@ exports.addMessage = functions.https.onRequest(async (req, res) => {
         if (!doc.exists) {        
             console.log('No such document!');
 
-            res.se;
+            res.status(404).send("No such document!");
 
             return false;
         } else {
